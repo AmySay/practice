@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f2c02375-76d4-4201-b2b9-984f8955a567" name="Default" comment="" />
+    <list default="true" id="f2c02375-76d4-4201-b2b9-984f8955a567" name="Default" comment="测试git">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/2018面试/web2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/2018面试/web2/index.html" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -14,29 +17,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/2018面试/web2/index.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="73" column="7" lean-forward="true" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
-              <folding>
-                <element signature="e#78#329#0" />
-                <element signature="e#201#325#0" />
-                <element signature="e#1496#1518#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/2018面试/web2/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="193" column="6" lean-forward="true" selection-start-line="193" selection-start-column="6" selection-end-line="193" selection-end-column="6" />
+            <state relative-caret-position="555">
+              <caret line="198" column="19" selection-start-line="198" selection-start-column="19" selection-end-line="198" selection-end-column="19" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
                 <element signature="n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
@@ -44,21 +32,6 @@
               </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="progress-fill.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/2018面试/web2/img/progress-fill.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file leaf-file-name="progress-base.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/2018面试/web2/img/progress-base.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file leaf-file-name="Item 1.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/2018面试/web2/img/Item 1.png">
-          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
@@ -83,6 +56,9 @@
       <find>menuItemBox</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -92,8 +68,8 @@
         <option value="$PROJECT_DIR$/less.ts" />
         <option value="$PROJECT_DIR$/less.js" />
         <option value="$PROJECT_DIR$/2018面试/web/page/index.html" />
-        <option value="$PROJECT_DIR$/2018面试/web2/index.html" />
         <option value="$PROJECT_DIR$/2018面试/web2/index.less" />
+        <option value="$PROJECT_DIR$/2018面试/web2/index.html" />
       </list>
     </option>
   </component>
@@ -112,6 +88,7 @@
     <option name="width" value="1940" />
     <option name="height" value="1050" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -123,6 +100,17 @@
             <path>
               <item name="二次刷前端" type="b2602c69:ProjectViewProjectNode" />
               <item name="二次刷前端" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="二次刷前端" type="b2602c69:ProjectViewProjectNode" />
+              <item name="二次刷前端" type="462c0819:PsiDirectoryNode" />
+              <item name="2018面试" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="二次刷前端" type="b2602c69:ProjectViewProjectNode" />
+              <item name="二次刷前端" type="462c0819:PsiDirectoryNode" />
+              <item name="2018面试" type="462c0819:PsiDirectoryNode" />
+              <item name="web2" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -162,36 +150,45 @@
       <option name="presentableId" value="Default" />
       <updated>1555731498061</updated>
       <workItem from="1555731501599" duration="1251000" />
-      <workItem from="1555737319773" duration="34269000" />
+      <workItem from="1555737319773" duration="34811000" />
     </task>
+    <task id="LOCAL-00001" summary="测试git">
+      <created>1555897756781</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1555897756782</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35520000" />
+    <option name="totallyTimeSpent" value="36062000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="TypeScript" />
-      <window_info active="true" anchor="bottom" id="SVN Repositories" visible="true" weight="0.49435028" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24966975" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="TypeScript" order="2" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966975" />
+      <window_info anchor="bottom" id="TODO" order="8" />
+      <window_info anchor="bottom" id="Messages" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="12" />
+      <window_info anchor="bottom" id="Run" order="4" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="SVN Repositories" order="0" weight="0.49435028" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="3" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,7 +199,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="导入一个已有的项目" />
-    <option name="LAST_COMMIT_MESSAGE" value="导入一个已有的项目" />
+    <MESSAGE value="测试git" />
+    <option name="LAST_COMMIT_MESSAGE" value="测试git" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/2018面试/web/page/index.html">
@@ -396,8 +394,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/2018面试/web2/index.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="73" column="7" lean-forward="true" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
+        <state relative-caret-position="256">
+          <caret line="128" selection-start-line="128" selection-end-line="128" />
           <folding>
             <element signature="e#78#329#0" />
             <element signature="e#201#325#0" />
@@ -408,12 +406,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/2018面试/web2/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="193" column="6" lean-forward="true" selection-start-line="193" selection-start-column="6" selection-end-line="193" selection-end-column="6" />
+        <state relative-caret-position="555">
+          <caret line="198" column="19" selection-start-line="198" selection-start-column="19" selection-end-line="198" selection-end-column="19" />
           <folding>
             <element signature="n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#1;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#div#2;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" />

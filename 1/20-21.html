@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input id="name" type="text" onkeydown="EnterPress() ">
+    <button id="submit-btn">Submit</button>
+
+    <script>
+        document.getElementById("submit-btn").onclick = function () {
+            console.log(document.getElementById("name").value)
+        }
+        function EnterPress() {
+            if (event.keyCode == 13) { //按下回车键
+                console.log(document.getElementById("name").value)
+            }
+            if (event.keyCode == 27) { //按下esc
+                console.log(document.getElementById("name").value = "")
+            }
+        }
+
+
+        function Go(n) {
+            console.log("Go" + n);
+        }
+
+        function GoSteps(n) {
+            if(arguments.length==0 || n===true){
+                n=1
+            }
+            parseInt(n)
+            
+
+        }
+        console.log(GoSteps(10)) ; // Go 10次
+        console.log(GoSteps(1)) ; // Go 1次
+        console.log(GoSteps()) ; // // Go 1次，认为缺少参数时，默认参数为1
+       console.log(GoSteps(0));// 0次
+       console.log(GoSteps(-1));// 0次
+        // GoSteps(1.4);  // Go 1次
+        // GoSteps(1.6);  // Go 1次
+        // GoSteps(true);  // Go 1次
+        // GoSteps(false);  // 0次
+        // GoSteps("Test");  // 0次
+        // GoSteps(NaN);  // 0次
+        // GoSteps(null);  // 0次
+    </script>
+</body>
+
+</html>

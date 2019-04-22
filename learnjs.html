@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    ul {
+        background: #ccc;
+        letter-spacing: -4px;
+        line-height: 0;
+    }
+
+    ul li {
+        list-style-type: none;
+        width: 100px;
+        height: 100px;
+        display: inline-flex;
+        letter-spacing: normal;
+    }
+
+    .w {
+        background: #ccc;
+        letter-spacing: -4px;
+        line-height: 0;
+    }
+
+    .we {
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+    }
+
+    .wrapper {
+        width: 50%;
+        box-sizing: border-box;
+        float: left;
+        padding: 0.6em;
+        font-size: 5em;
+        font-family: monospace;
+        font-weight: bolder;
+        text-align: center;
+        background-image: url("https://images.unsplash.com/photo-1550684848-fac1c5b4e853?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80");
+    }
+
+    .wrapper.after {
+        background-clip: text;
+        color: transparent;
+    }
+
+    .big {
+        line-height: 0.6em;
+        font-size: 2.4em;
+    }
+</style>
+
+<body>
+        <div class="agent"></div>
+    <ul>
+        <li style="backGround:red"></li>
+        <li style="backGround:blue"></li>
+        <li style="backGround:yellow"></li>
+        <li style="backGround:green"></li>
+    </ul>
+
+    <div class="w">
+        <span class="we" style="backGround:red"></span>
+        <span class="we" style="backGround:blue"></span>
+        <span class="we" style="backGround:yellow"></span>
+        <span class="we" style="backGround:green"></span>
+    </div>
+    <div class="wrapper before">
+        <span class="big">CSS</span><br />
+        is Good
+    </div>
+
+    <div class="wrapper after">
+        <span class="big">CSS</span><br />
+        is Good
+    </div>
+    <a href="tel:+120">报警!</a>
+    <a href="wtai://wp//mc;10086">拨打10086 </a>  <a href="wtai://wp/ap;10086;">将10086存储至电话簿 </a>  <a href="sms:10086">发短信到10086 </a> 
+</body>
+<!-- <script src="../jq/jq.js"></script> -->
+<script>
+    // $(function () {
+
+    let arr1 = ["a", "b", "c"], arr2 = ["a", "b", "c", "d"];
+    let intersection = [], sub = [];//差集
+    //交集
+    for (let n = 0; n < arr1.length; n++) {
+        for (let i = 0; i < arr2.length; i++) {
+            if (arr1[n] == arr2[i]) {
+                intersection.push(arr2[i])
+            }
+        }
+    }
+    //差集  arr2于arr1的差集  arr2-arr1
+    for (let m = 0; m < arr2.length; m++) {
+        if (!arr1.includes(arr2[m])) {
+            sub.push(arr2[m])
+        } else {
+            console.log("arr2于arr1没有差集")
+        }
+    }
+    console.log("交集", intersection)
+    console.log("差集", sub)
+    //并集
+    let and = [...arr1, ...arr2];
+    console.log("并集", and)
+    //去重
+    function differencet() {
+        let differencet = [];
+        for (let d = 0; d < and.length; d++) {
+            if (!differencet.includes(and[d])) {
+                differencet.push(and[d])
+            }
+        }
+        console.log("去重", differencet)
+        return differencet;
+    }
+    differencet()
+
+let isAgent="0";
+$(".agent").text(isAgent)
+
+
+// })
+
+
+
+
+
+</script>
+
+</html>

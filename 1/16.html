@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>IFE ECMAScript</title>
+</head>
+
+<body>
+    <input id="first-number" type="number" value="0" placeholder="第一个数字">
+    <input id="second-number" type="number" value="0" placeholder="第二个数字">
+    <button id="add-btn">加</button>
+    <button id="minus-btn">减</button>
+    <button id="times-btn">乘</button>
+    <button id="divide-btn">除</button>
+    <p id="result">运算结果</p>
+    <script>
+        let first = document.getElementById("first-number");
+        let second = document.getElementById("second-number");
+        let add = document.getElementById("add-btn");
+        let minus = document.getElementById("minus-btn");
+        let times = document.getElementById("times-btn");
+        let divide = document.getElementById("divide-btn");
+        let result = document.getElementById("result");
+        add.onclick = function () {
+            let a = first.value, b = second.value;
+            result.innerHTML = parseInt(a) + parseInt(b)
+        }
+        minus.onclick = function () {
+            let a = first.value, b = second.value;
+            result.innerHTML = parseInt(a) - parseInt(b)
+        }
+        times.onclick = function () {
+            let a = first.value, b = second.value;
+            result.innerHTML = parseInt(a) * parseInt(b)
+        }
+        divide.onclick = function () {
+            let a = first.value, b = second.value;
+            if (a == 0 || b == 0) {
+                alert("不能为0")
+                return
+            }
+
+            result.innerHTML = parseInt(a) / parseInt(b)
+        }
+
+
+function search2Obj(str) {
+    str = decodeURI(str) || '';
+    
+    str = str.indexOf('?') > -1 ? str.slice(str.indexOf('?') + 1) : str;
+
+    var items = str.split('&');
+    var result = {};
+    for (let i = 0; i < items.length; i++) {
+        var arr = items[i].split('=');
+        var key = arr[0];
+        var value = arr[1];
+        if (key) {
+            if (result[key]) {
+                if (Array.isArray(value)) {
+                    result[key] = result[key].concat(value);
+                } else {
+                    result[key] = [result[key]].concat(value);
+                }
+            } else {
+                result[key] = value;
+            }
+        }
+    }
+    return result;
+}
+console.log(window.location.href)
+console.log(search2Obj(window.location.href).img )
+
+
+    </script>
+</body>
+
+</html>

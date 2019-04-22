@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    .wrapper{
+    position: relative;
+}
+#email-input{
+    width: 200px;
+}
+.email-sug{
+    position: absolute;
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    width: 202px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    display: none;
+}
+li{
+    border-bottom: 1px solid #ccc;
+    height: 30px;
+    line-height: 30px;
+    
+}
+/* li:nth-of-type(1){
+    background: pink;
+} */
+.active{
+    background: pink;
+}
+
+</style>
+
+<body>
+    <div class="wrapper">
+        <input id="email-input" type="text" autofocus="autofocus" >
+        <ul id="email-sug-wrapper" class="email-sug">
+        </ul>
+    </div>
+    <script>
+        
+        // 邮箱后缀List参考
+        var postfixList = ['@163.com', '@gmail.com', '@126.com', '@qq.com', '@263.net'];
+        let ipt = document.getElementById("email-input");
+        let Ul = document.getElementById("email-sug-wrapper");
+        var index = 0;
+        var List = [];
+        var iptCtn = '';
+        var UlStyle = Ul.style.display;
+
+        function trim(str) {
+            let val = str.replace(/\s+/g, "");
+            return val.split("@")[0]
+        }
+
+        function postfix(iptVal) {
+            let Li = postfixList.map((item, idx) => {
+                return iptVal + item;
+            })
+            return Li;
+        }
+        function show() {
+            Ul.style.display = "block";
+        }
+        function none() {
+            Ul.style.display = "none";
+        }
+        function ctn(arr) {
+            let str = "";
+            for (let i = 0; i < arr.length; i++) {
+                str += arr[i]
+            }
+            return str
+        }
+        // hover事件
+        function hover(Li) {
+            for (let i = 0; i < Li.length; i++) {
+                var oldColor = "";
+                Li[i].onmouseover = function (e) {
+                    let target = e.target;
+                    oldColor = target.style.backgroundColor;
+                    target.style.backgroundColor = "yellow"
+
+                }
+                Li[i].onmouseout = function (e) {
+                    let target = e.target;
+                    target.style.backgroundColor = oldColor
+                }
+            }
+        }
+       
+        //点击li
+        function clickLi(Li) {
+            for (let i = 0; i < Li.length; i++) {
+                var oldColor = "";
+                Li[i].onclick = function (e) {
+                    let target = e.target;
+                    console.log(target)
+                    ipt.value = target.innerHTML;
+                    Ul.style.display = "none"
+                }
+
+            }
+            
+        }
+
+        ipt.onkeyup = function (e) {
+            iptCtn = trim(ipt.value);
+            if (iptCtn) {
+                show()
+                List = postfix(iptCtn);
+                let aa = List.map((item, idx) => {
+                    let ListCtn = `<li>${item}</li>`;
+                    return ListCtn;
+                })
+                Ul.innerHTML = ctn(aa);
+                var Li = document.querySelectorAll("li");
+                hover(Li)
+                clickLi(Li)
+                ipt.focus()
+            } else {
+                none()
+            }
+            let len = List.length;
+            if (e.keyCode == "13") {//回车
+                ipt.value = Li[index].innerHTML;
+                none()
+                ipt.focus()
+            }
+            if (e.keyCode == "38" && Ul.style.display == "block") { //向上
+                if(index<1){
+                    index=len-1;
+                }else{
+                    index--
+                }
+                // Li[index].style.backgroundColor="pink"
+                Li[index].setAttribute("class","active")
+            }
+            if (e.keyCode == "40") {//向下
+                if(index<len-1){
+                    index++;
+                }else{
+                    index=0; 
+                }
+                // Li[index].style.backgroundColor="pink"
+                Li[index].setAttribute("class","active")
+               
+            }
+            if (e.keyCode == "27") {
+                ipt.select()
+            }
+
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

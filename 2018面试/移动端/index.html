@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="full-screen" content="yes">
+  <meta name="x5-fullscreen" content="true">
+  <title>phone</title>
+</head>
+<link rel="stylesheet" href="./index.css">
+<!-- <script src="./../../less.js"></script> -->
+<script>
+  !function () { var a = "@charset \"utf-8\";html{color:#000;background:#fff;overflow-y:scroll;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}html *{outline:0;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}html,body{font-family:sans-serif}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0}input,select,textarea{font-size:100%}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}abbr,acronym{border:0;font-variant:normal}del{text-decoration:line-through}address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:500}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500}q:before,q:after{content:''}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}a:hover{text-decoration:underline}ins,a{text-decoration:none}", b = document.createElement("style"); if (document.getElementsByTagName("head")[0].appendChild(b), b.styleSheet) b.styleSheet.disabled || (b.styleSheet.cssText = a); else try { b.innerHTML = a } catch (c) { b.innerText = a } }();
+  !function (a, b) { function c() { var b = f.getBoundingClientRect().width; b / i > 540 && (b = 540 * i); var c = b / 10; f.style.fontSize = c + "px", k.rem = a.rem = c } var d, e = a.document, f = e.documentElement, g = e.querySelector('meta[name="viewport"]'), h = e.querySelector('meta[name="flexible"]'), i = 0, j = 0, k = b.flexible || (b.flexible = {}); if (g) { console.warn("将根据已有的meta标签来设置缩放比例"); var l = g.getAttribute("content").match(/initial\-scale=([\d\.]+)/); l && (j = parseFloat(l[1]), i = parseInt(1 / j)) } else if (h) { var m = h.getAttribute("content"); if (m) { var n = m.match(/initial\-dpr=([\d\.]+)/), o = m.match(/maximum\-dpr=([\d\.]+)/); n && (i = parseFloat(n[1]), j = parseFloat((1 / i).toFixed(2))), o && (i = parseFloat(o[1]), j = parseFloat((1 / i).toFixed(2))) } } if (!i && !j) { var p = (a.navigator.appVersion.match(/android/gi), a.navigator.appVersion.match(/iphone/gi)), q = a.devicePixelRatio; i = p ? q >= 3 && (!i || i >= 3) ? 3 : q >= 2 && (!i || i >= 2) ? 2 : 1 : 1, j = 1 / i } if (f.setAttribute("data-dpr", i), !g) if (g = e.createElement("meta"), g.setAttribute("name", "viewport"), g.setAttribute("content", "initial-scale=" + j + ", maximum-scale=" + j + ", minimum-scale=" + j + ", user-scalable=no"), f.firstElementChild) f.firstElementChild.appendChild(g); else { var r = e.createElement("div"); r.appendChild(g), e.write(r.innerHTML) } a.addEventListener("resize", function () { clearTimeout(d), d = setTimeout(c, 300) }, !1), a.addEventListener("pageshow", function (a) { a.persisted && (clearTimeout(d), d = setTimeout(c, 300)) }, !1), "complete" === e.readyState ? e.body.style.fontSize = 12 * i + "px" : e.addEventListener("DOMContentLoaded", function () { e.body.style.fontSize = 12 * i + "px" }, !1), c(), k.dpr = a.dpr = i, k.refreshRem = c, k.rem2px = function (a) { var b = parseFloat(a) * this.rem; return "string" == typeof a && a.match(/rem$/) && (b += "px"), b }, k.px2rem = function (a) { var b = parseFloat(a) / this.rem; return "string" == typeof a && a.match(/px$/) && (b += "rem"), b } }(window, window.lib || (window.lib = {}));
+</script>
+
+<body>
+  <div class="rem">
+    <div class="title clear">
+      <div class="back">返回</div>
+      <div class="text">标题</div>
+    </div>
+    <div class="tabBox clear">
+      <div class="tab">tab1</div>
+      <div class="tab">tab2</div>
+      <div class="tab">tab3</div>
+      <div class="tab">tab4</div>
+    </div>
+    <div class="banner">
+      <img src="./img/p2_1.png" alt="">
+    </div>
+    <div class="banner_nav">
+      <div class="nav_img clear">
+        <div>
+          <img src="./img/Item 1.png" alt="">
+          <p>Tab1</p>
+        </div>
+        <div>
+          <img src="./img/Item 2.png" alt="">
+          <p>Tab2</p>
+        </div>
+        <div>
+          <img src="./img/Item 1.png" alt="">
+          <p>Tab3</p>
+        </div>
+        <div>
+          <img src="./img/Item 2.png" alt="">
+          <p>Tab4</p>
+        </div>
+        <div>
+          <img src="./img/Item 1.png" alt="">
+          <p>Tab5</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="banner_nav2 clear">
+      <div class="nav">
+        <div>
+          <img src="./img/p2_1.png" alt="">
+        </div>
+        <p>小标题</p>
+      </div>
+      <div class="nav">
+        <div>
+          <img src="./img/p2_1.png" alt="">
+        </div>
+        <p>小标题</p>
+      </div>
+      <div class="nav">
+        <div>
+          <img src="./img/p2_1.png" alt="">
+        </div>
+        <p>小标题</p>
+      </div>
+    </div>
+    <div class="modue1">
+      <h5>模块1</h5>
+      <div class="modue1_ctn">
+        <div class="box">
+          <div class="left unshrink"><img src="http://fakeimg.pl/30x40" alt=""></div>
+          <div class="right">
+            <div class="row">
+              <div class="item">item</div>
+              <div class="item">item</div>
+            </div>
+            <div class="row">
+              <div class="item">item</div>
+              <div class="item">item</div>
+            </div>
+          </div>
+        </div>
+        <div class="box box2">
+          <div class="left unshrink"><img src="http://fakeimg.pl/30x40" alt=""></div>
+          <div class="right">
+            <div class="row">
+              <div class="item">item</div>
+              <div class="item">item</div>
+            </div>
+            <div class="row">
+              <div class="item">item</div>
+              <div class="item">item</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="detail">
+      <div class="item">
+        <div class="img unshrink"><img src="./img/p2_1.png" alt=""></div>
+        <div class="text">
+          <p>这也是这也是一个标题这也是一个标题这也是一个标题这也是一个标题这也是一个标一个标题</p>
+          <p>2119-3-4</p>
+        </div>
+      </div>
+      <div class="item">
+        <div class="img unshrink"><img src="./img/p2_1.png" alt=""></div>
+        <div class="text">
+          <p>这也是这也是一个标题这也是一个标题这也是一个标题这也是一个标题这也是一个标一个标题</p>
+          <p>2119-3-4</p>
+        </div>
+      </div>
+    </div>
+    <div class="moude2">
+      <h5>模块2</h5>
+      <div class="imgs">
+        <img src="./img/p2_1.png" alt="">
+        <img src="./img/p2_1.png" alt="">
+        <img src="./img/p2_1.png" alt="">
+      </div>
+    </div>
+
+
+</body>
+
+</html>

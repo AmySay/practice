@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+    background: #fff;
+}
+
+a {
+    color: #7e8c8d;
+    text-decoration: none;
+    /* -webkit-backface-visibility: hidden; */
+}
+
+li {
+    list-style: none;
+}
+
+::-webkit-scrollbar {
+    /* width: 5px;
+    height: 5px; */
+    display: none;
+}
+
+.clear:after {
+    content: '.';
+    height: 0;
+    display: block;
+    clear: both;
+}
+
+/*无伸长*/
+.unflexible {
+    flex-grow: 0;
+    -moz-flex-grow: 0;
+    -ms-flex-grow: 0;
+    -webkit-flex-grow: 0;
+}
+
+.flexible {
+    flex-grow: 1;
+    -moz-flex-grow: 1;
+    -ms-flex-grow: 1;
+    -webkit-flex-grow: 1;
+}
+
+/*有无压缩*/
+.unshrink {
+    flex-shrink: 0;
+    -moz-flex-shrink: 0;
+    -ms-flex-shrink: 0;
+    -webkit-flex-shrink: 0;
+}
+
+.shrink {
+    flex-shrink: 1;
+    -moz-flex-shrink: 1;
+    -ms-flex-shrink: 1;
+    -webkit-flex-shrink: 1;
+}
+
+
+
+
+.title {
+    width: 100%;
+    height: .8rem;
+    background: #0000ee;
+    line-height: .8rem;
+    color: #fff;
+    padding: 0 5px;
+    text-align: center;
+    font-size: .426667rem;
+}
+
+.title .back {
+    float: left;
+}
+
+.tabBox {
+    width: 100%;
+    height: .8rem;
+
+}
+
+.tabBox .tab {
+    float: left;
+    width: 25%;
+    border-right: .026667rem solid #7e8c8d;
+    text-align: center;
+    color: #484848;
+    height: 100%;
+    line-height: .8rem;
+}
+
+.tabBox :nth-last-child(1) {
+    border-right: none;
+}
+
+.banner img {
+    max-width: 100%;
+}
+
+.banner_nav {
+    padding: .266667rem 0;
+
+}
+
+.banner_nav .nav_img>div {
+    float: left;
+    text-align: center;
+    width: 20%;
+}
+
+.banner_nav .nav_img>div img {
+    max-width: 50px;
+    margin-bottom: .266667rem;
+}
+
+.banner_nav .nav_img :nth-last-child(1) {
+    margin-right: 0;
+}
+
+.banner_nav2 {
+    padding: .266667rem;
+}
+
+.banner_nav2 .nav {
+    float: left;
+    width: 30%;
+    margin-right: 5%;
+}
+
+.banner_nav2 .nav:nth-last-child(1) {
+    margin-right: 0;
+}
+
+.banner_nav2 .nav>div {
+    width: 100%;
+    padding-top: 50%;
+    padding-left: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner_nav2 .nav>div img {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+.banner_nav2 .nav>p {
+    text-align: center;
+    margin-top: .4rem
+}
+
+.modue1 {
+    background: #eee;
+    padding: .2rem 0;
+    height: 100%;
+}
+
+.modue1 h5 {
+    line-height: 2;
+    background: #fff;
+    padding-left: .3rem;
+    border-bottom: 1px solid #7e8c8d;
+}
+
+.modue1 .modue1_ctn {
+    padding: .3rem;
+    background: #fff;
+    height: 100%;
+}
+
+.modue1_ctn .box {
+    margin-bottom: .4rem;
+    height: 4.266667rem;
+    display: flex;
+}
+
+.modue1_ctn .box2 {
+    margin-bottom: 0rem;
+}
+
+.modue1_ctn .box .left {
+    width: 2.666667rem;
+    height: 100%;
+}
+
+.modue1_ctn .box .left img {
+    width: 100%;
+    height: 100%;
+}
+
+.modue1_ctn .box .right {
+ width: 100%;
+ height: 100%;
+ display: flex;
+ flex-direction: column;
+}
+.modue1_ctn .box .right .row {
+   width: 100%;
+   margin-bottom: .266667rem;
+   display: flex;
+   height: 100%
+}
+.modue1_ctn .box .right :nth-last-child(1){
+    margin-bottom: 0
+}
+.modue1_ctn .box .right .row .item{
+    height: 100%;
+    width: 100%;
+    margin-left: .266667rem;
+    background: #eee;
+}
+
+
+.detail {
+    width: 100%;
+}
+
+.detail .item {
+    height: 4rem;
+    display: flex;
+    padding: .266667rem;
+    border-bottom: 1px solid #cccccc;
+}
+
+.detail .item .img {
+    width: 2.666667rem;
+    height: 100%;
+}
+
+.detail .item .img img {
+    width: 100%;
+    height: 100%;
+}
+
+.detail .item .text {
+    height: 100%;
+    margin-left: .625rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.detail .item .text p {
+    line-height: 1.5
+}
+
+.moude2 {
+    padding: 0 .266667rem;
+}
+
+.moude2 h5 {
+    line-height: 2
+}
+
+.moude2 .imgs {
+    width: 100%;
+    height: 4.533333rem;
+    font-size: 0;
+}
+
+.imgs img {
+    display: inline-block;
+    width: 33.3%;
+    height: 100%;
+}

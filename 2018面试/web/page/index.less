@@ -3,7 +3,9 @@ body {
 }
 
 * {
-  box-sizing: border-box;;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .center {
@@ -279,15 +281,17 @@ body {
   .part5 {
     height: 1000px;
     overflow: hidden;
+    .center{
+      margin-top: 114px;
+    }
     .first {
-      margin: 114px 0 85px 0;
+      margin-bottom: 85px;
     }
     .imgBox {
       display: flex;
       align-items: center;
-      & :nth-child(1) {
-        margin-right: 100px;
-      }
+      justify-content: space-between;
+
       .rigth_ctn {
         text-align: left;
         .title {

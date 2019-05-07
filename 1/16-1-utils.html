@@ -17,7 +17,7 @@
         background-color: currentColor;
         background-clip: content-box;
     } */
-     /* CSS三道杠2  */
+    /* CSS三道杠2  */
     /* .icon {
         display: inline-block;
         width: 120px;
@@ -27,64 +27,73 @@
     } */
     /* <!-- CSS圆点 --> */
     .icon {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    padding: 2px;
-    border: 2px solid green;
-    border-radius: 50%;
-    background-color: red;
-    background-clip: content-box;
-}
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        padding: 2px;
+        border: 2px solid green;
+        border-radius: 50%;
+        background-color: red;
+        background-clip: content-box;
+    }
 
- .box {
+    .box {
         width: 256px;
         height: 256px;
         text-align: justify;
     }
-    .box:before { 
+
+    .box:before {
         content: "";
         display: inline-block;
         height: 100%;
     }
+
     .box:after {
         content: "";
         display: inline-block;
         width: 100%;
     }
+
     .bar {
         display: inline-block;
         width: 20px;
         height: 20px;
         background: red;
         /* height自定 */
-    } 
+    }
+
     h1 {
         content: url("./Hero.png");
     }
-    
-    #ids{
+
+    #ids {
         width: 20px;
         height: 20px;
         border-radius: 50%;
         content: url("./Hero.png");
     }
+
     .ao {
         display: inline-block;
         width: 0;
     }
+
     .ao::before {
         content: "love 你 love";
         outline: 2px solid #000;
         color: #fff;
     }
+
     .box1 {
         text-align: center;
     }
+
     .content {
         display: inline-block;
         text-align: left;
     }
+
     /* .right{
         width: 100px;
         margin-left: auto;
@@ -95,91 +104,109 @@
         border-style: solid;
         /* border-color: #f30 transparent transparent; */
         border-color: #f30 #f30 transparent transparent;
-    } 
+    }
 
-     p {
+    p {
         font-size: 14px;
     }
-    p > img {
-        width: 16px; height: 16px;
+
+    p>img {
+        width: 16px;
+        height: 16px;
         /* 中间对齐 */
         vertical-align: .6ex;
         /* //底部对齐 */
-        vertical-align: 1ex;  
+        vertical-align: 1ex;
         position: relative;
         top: 8px;
     }
+
     .box2 {
         height: 10em;
         border: 1px solid #ddd;
         overflow: hidden;
     }
+
     .list {
         height: 100%;
         background: #ddd;
         position: relative;
     }
-    .list > input {
-        position: absolute; top:0;
-        height: 100%; width: 0;
-        border:0; padding: 0; margin: 0;
-    } 
+
+    .list>input {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 0;
+        border: 0;
+        padding: 0;
+        margin: 0;
+    }
 
 
- .father {
+    .father {
         position: relative;
         width: 20px;
         height: 20px;
     }
+
     .son {
         position: absolute;
         /* 解决方案 */
         white-space: nowrap;
-        
+
     }
-    .son p{
+
+    .son p {
         display: inline-block;
     }
+
     .crop {
-        width: 200px; height: 200px;
+        width: 200px;
+        height: 200px;
         overflow: hidden;
         position: relative;
     }
-    .crop > .crop-area {
-        position: absolute; top:0; height: 0;
-        width: 80px; height: 80px;
-        outline: 200px solid rgba(0,0,0,.5);
+
+    .crop>.crop-area {
+        position: absolute;
+        top: 0;
+        height: 0;
+        width: 80px;
+        height: 80px;
+        outline: 200px solid rgba(0, 0, 0, .5);
         cursor: move;
-    } 
+    }
 
-#heart {
-  cursor: pointer;
-  height: 50px;
-  width: 50px;
-  background-image: url('./img.png');
-  background-position: left;
-  background-repeat: no-repeat;
-  background-size: 2900%;
-}
+    #heart {
+        cursor: pointer;
+        height: 50px;
+        width: 50px;
+        background-image: url('./img.png');
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: 2900%;
+    }
 
-.is_animating {
-  animation-name: heart-burst;
-  animation-duration: 800ms;
-  animation-timing-function: steps(28);
-  animation-iteration-count: 1;
-}
+    .is_animating {
+        animation-name: heart-burst;
+        animation-duration: 800ms;
+        animation-timing-function: steps(28);
+        animation-iteration-count: 1;
+    }
 
-@keyframes heart-burst {
-  from {
-    background-position: left;
-  }
-  to {
-    background-position: right;
-  }
-}
+    @keyframes heart-burst {
+        from {
+            background-position: left;
+        }
+
+        to {
+            background-position: right;
+        }
+    }
 
 
-/* .header{
+    /* .header{
     height: 100px;
   width :100%;
   background-color: #f9f1db; 
@@ -206,54 +233,57 @@
     border-radius :50%;
 } */
 
-.header{
-    width: 100%;
-    height: 100px;
-    display: flex;
-    align-items: center;
-}
-.header__avatar{
-background-color: #FF9000;
-}
-.header__more{
-background-color:#A65E00;
-margin-left: auto;
-}
-.header__title{
-    color: #f30;
-}
-.header__avatar,.header__more{
-    flex:0 0 80px;
-    height: 80px;
-    border-radius: 50%;
-}
-.flexBox{
-    width: 100px;
-    display: flex;
-    flex-direction: row;
-    margin: 20px;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-/* .flexBox:after{
+    .header {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        align-items: center;
+    }
+
+    .header__avatar {
+        background-color: #FF9000;
+    }
+
+    .header__more {
+        background-color: #A65E00;
+        margin-left: auto;
+    }
+
+    .header__title {
+        color: #f30;
+    }
+
+    .header__avatar,
+    .header__more {
+        flex: 0 0 80px;
+        height: 80px;
+        border-radius: 50%;
+    }
+
+    .flexBox {
+        width: 100px;
+        display: flex;
+        flex-direction: row;
+        margin: 20px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    /* .flexBox:after{
     content: '';
     width: 30px
 } */
-.flexBox .item{
-    height: 10px;
-    background: #A65E00;
-    /* margin-bottom: 5px; */
-    width: 33.33%;  
+    .flexBox .item {
+        height: 10px;
+        background: #A65E00;
+        /* margin-bottom: 5px; */
+        width: 33.33%;
 
-}
-/* .flexBox :nth-child(2){
+    }
+
+    /* .flexBox :nth-child(2){
     margin-right: auto;
 } */
-
-
-   
- 
-
 </style>
 
 <body>
@@ -293,13 +323,20 @@ margin-left: auto;
     </div>
 
     <div class="flexBox">
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-        </div>
-    
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <div class="dateNav" style="background:red;width:60px;height:20px">
+        navtext
+    </div>
+    <div class="date" style="background:rgb(207, 204, 24);width:200px;height:200px;display: none;">
+        33333333333333333333
+    </div>
+
+
     <div class="crop">
         <div id="cropArea" class="crop-area"></div>
         <img src="./Hero.png">
@@ -314,9 +351,10 @@ margin-left: auto;
         <div class="header__more"></div>
     </header>
 
-   
+
 
     <script src='./../moment/moment.js'></script>
+    <script src="./../jq/jq.js"></script>
     <script>
         window.onload = function () {
             console.log("moment" + moment())
@@ -990,7 +1028,7 @@ margin-left: auto;
         let local = area.children;
 
         function get(localdate, yuanqu, dalou) {
-            var yqsub = [],dalsub = [];
+            var yqsub = [], dalsub = [];
             function getyuan() {
                 let yuan;
                 if (yuanqu) {
@@ -1022,10 +1060,48 @@ margin-left: auto;
             return [{ "YQ": getyuanDate }, { "DL": yqsub }, { "LC": dalsub }]
         }
         console.log(get(local))
-        console.log(get(local,"宝石园"))
-        console.log(get(local,'宝石园','20号楼'))
+        console.log(get(local, "宝石园"))
+        console.log(get(local, '宝石园', '20号楼'))
 
-       
+        $(document).ready(function () {
+            // 日期选择hover延迟
+            (function ($) {
+                $.fn.hoverDelay = function (options) {
+                    var defaults = {
+                        hoverDuring: 200,
+                        outDuring: 200,
+                        hoverEvent: function () {
+                            $.noop();
+                        },
+                        outEvent: function () {
+                            $.noop();
+                        }
+                    };
+                    var sets = $.extend(defaults, options || {});
+                    var hoverTimer, outTimer;
+                    return $(this).each(function () {
+                        $(this).hover(function () {
+                            clearTimeout(outTimer);
+                            hoverTimer = setTimeout(sets.hoverEvent, sets.hoverDuring);
+                        }, function () {
+                            clearTimeout(hoverTimer);
+                            outTimer = setTimeout(sets.outEvent, sets.outDuring);
+                        });
+                    });
+                }
+            })(jQuery);
+            
+            $(".dateNav").hoverDelay({
+                outDuring: 200,
+                hoverEvent: function () {
+                    $(".date").show();
+                },
+                outEvent: function () {
+                    $(".date").hide();
+                }
+            });
+        })
+
     </script>
 </body>
 

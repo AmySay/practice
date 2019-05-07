@@ -1,0 +1,314 @@
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #58627C;
+}
+
+.inline1 {
+  color: #FFFFFF;
+  background: url("./img/Background@1x.jpg") no-repeat;
+  background-size: cover;
+  height: 725px;
+  .logoimg {
+    img {
+      width: 105px;
+      height: 90px;
+      margin: 50px 50px 0 0;
+    }
+  }
+
+  .swiperBox {
+    .phone {
+      img {
+        width: 397px;
+        height: 800px;
+        margin: 0 10%;
+      }
+    }
+    .wechat {
+      text-align: left;
+      padding-top: 120px;
+      .slogen {
+        background: #1D1949;
+        border-radius: 20px;
+        padding: 5px 10px;
+        margin: 15px 0;
+        max-width: 330px;
+      }
+      .wechat_img {
+        margin: 15px 0;
+      }
+      .mini_f {
+        font-size: 0.8rem;
+      }
+    }
+
+  }
+
+}
+
+.inline2 {
+  background: #E8EDFA;
+  padding-top: 250px;
+  text-align: center;
+  .card_box {
+    .card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      letter-spacing: 2px;
+      .auth {
+        width: 74px;
+        height: 59px;
+      }
+    }
+
+  }
+}
+
+.bg_text {
+  background: url(./img/waves@2x.png) no-repeat;
+  background-size: cover;
+  margin-top: -170px;
+  min-height: 550px;
+}
+
+.inline3 {
+  background: url(./img/phone2@2x.jpg) no-repeat right bottom;
+  background-size: contain;
+  min-height: 550px;
+  margin-bottom: 100px;
+  .minlogo {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+  }
+  .button {
+    background-image: linear-gradient(-180deg, #2170D3 3%, #2955BA 100%);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.19), inset 1px 1px 1px 0 rgba(255, 255, 255, 0.15);
+    border-radius: 48px;
+    max-width: 180px;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+  }
+}
+
+.line4 {
+  background: url(./img/comments_bg@2x.jpg) no-repeat;
+  background-size: cover;
+  min-height: 450px;
+  color: #fff;
+  position: relative;
+  line-height: 200%;
+  .container {
+    //position: absolute;
+    //top: 50%;
+    //left: 50%;
+    //transform: translate(-50%,-50%);
+    padding-top: 100px;
+  }
+  .smallheads {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+  .border_top {
+    border-top: 1px solid #FFFFFF;
+
+  }
+}
+
+.line5 {
+  background: url(./img/shadowbg@2x.jpg) no-repeat bottom;
+  background-size: contain;
+  min-height: 950px;
+  margin: 100px 0;
+  .bottomSwiper {
+  }
+  .line5_img {
+    width: 330px;
+    height: 589px;
+  }
+}
+
+.line6bg {
+  background: url(./img/wave2@2x.jpg) no-repeat bottom;
+  background-size: contain;
+  min-height: 600px;
+  margin: 100px auto 50px
+}
+
+footer {
+  background: #14152D;
+  color: #cde4ff;
+  padding: 5px;
+  .flex {
+    display: flex;
+    justify-content: space-between;
+    div {
+      display: flex;
+    }
+    img {
+      width: 173px;
+      height: 173px;
+      margin-top: -150px;
+      margin-left: 5px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+
+}
+
+@media (max-width: 1024px) {
+  .line6bg {
+    background: url(./img/wave2@2x.jpg) no-repeat center;
+    background-size: contain;
+    min-height: 500px;
+    margin: 50px auto;
+  }
+
+  .line5 .line5_img {
+    width: 330px;
+    height: 585px;
+  }
+}
+
+@media (max-width: 992px) {
+  h2 {
+    font-size: 1.4rem !important;
+  }
+
+  .inline1 .swiperBox .wechat .slogen {
+    font-size: .8rem !important;
+  }
+
+  .inline1 .swiperBox .wechat .mini_f {
+    font-size: .6rem !important;
+  }
+  footer .flex img {
+    width: 100px;
+    height: 100px;
+    margin-top: -80px;
+    margin-left: 5px;
+  }
+  .line6bg {
+    background: url(./img/wave2@2x.jpg) no-repeat center;
+    background-size: cover;
+    min-height: 300px;
+    margin: 50px auto;
+  }
+
+  .line5 {
+    min-height: 700px;
+    margin: 50px 0;
+    .line5_img {
+      width: 200px;
+      height: 357px;
+    }
+  }
+  .inline3{background-size: 55%;}
+  .inline2{
+    padding-top: 40px;
+  }
+  .inline1 {
+    height: 500px;
+    .logoimg{
+      float: right;
+    }
+    .swiperBox {
+      .phone {
+        text-align: right;
+        margin-top: 90px;
+        img {
+          width: 200px;
+          height: 403px;
+          margin: 0;
+        }
+      }
+      .wechat {
+        padding-top: 0;
+        //text-align: left;
+        //margin-top: -200px;
+        .wechat_img img {
+          width: 147px;
+          height: 60px;
+        }
+        //h2{
+        //  padding-top: 0 !important;
+        //}
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .line6bg {
+    background: url(./img/wave2@2x.jpg) no-repeat center;
+    background-size: cover;
+    min-height: 300px;
+    margin: 0 auto;
+  }
+  .line5 {
+    min-height: 585px;
+    margin: 30px 0;
+  }
+
+  .inline3 {
+    min-height: 550px;
+    margin-bottom: 50px;
+    .minlogo {
+      width: 60px;
+      height: 60px;
+      margin-right: 10px;
+    }
+  }
+  .inline2{
+    padding-top: 40px;
+  }
+  .bg_text {
+    margin-top: -40px;
+    min-height: 125px;
+  }
+
+  .inline1 {
+    height: 700px;
+    .logoimg {
+      float: none !important;
+      .f-r {
+        float: none !important;
+        margin: 20px 20px 0 0;
+      }
+    }
+    .swiperBox {
+      .phone {
+        text-align: right;
+        margin-top: 0;
+        img {
+          width: 200px;
+          height: 403px;
+          margin: 0;
+        }
+      }
+      .wechat {
+        padding-top: 0;
+        text-align: left;
+          margin-top: -65px;
+          .wechat_img img {
+            width: 147px;
+            height: 60px;
+          }
+          h2{
+          padding-top: 0 !important;
+        }
+      }
+    }
+  }
+
+}
+

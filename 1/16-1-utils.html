@@ -227,7 +227,28 @@ margin-left: auto;
     height: 80px;
     border-radius: 50%;
 }
+.flexBox{
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    margin: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+/* .flexBox:after{
+    content: '';
+    width: 30px
+} */
+.flexBox .item{
+    height: 10px;
+    background: #A65E00;
+    /* margin-bottom: 5px; */
+    width: 33.33%;  
 
+}
+/* .flexBox :nth-child(2){
+    margin-right: auto;
+} */
 
 
    
@@ -271,7 +292,14 @@ margin-left: auto;
         <label for="four">4</label>
     </div>
 
-
+    <div class="flexBox">
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+            <div class="item"></div>
+        </div>
+    
     <div class="crop">
         <div id="cropArea" class="crop-area"></div>
         <img src="./Hero.png">
@@ -285,6 +313,9 @@ margin-left: auto;
         <div class="header__title">Title</div>
         <div class="header__more"></div>
     </header>
+
+   
+
     <script src='./../moment/moment.js'></script>
     <script>
         window.onload = function () {

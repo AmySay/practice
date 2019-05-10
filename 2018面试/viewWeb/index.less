@@ -104,11 +104,7 @@ body {
   color: #fff;
   position: relative;
   line-height: 200%;
-  .container {
-    //position: absolute;
-    //top: 50%;
-    //left: 50%;
-    //transform: translate(-50%,-50%);
+  .swiper_face{
     padding-top: 100px;
   }
   .smallheads {
@@ -125,21 +121,21 @@ body {
 .line5 {
   background: url(./img/shadowbg@2x.jpg) no-repeat bottom;
   background-size: contain;
-  min-height: 950px;
   margin: 100px 0;
   .bottomSwiper {
+    min-height: 800px;
   }
   .line5_img {
-    width: 330px;
-    height: 589px;
+    width: 270px;
+    height: 450px;
   }
 }
 
 .line6bg {
-  background: url(./img/wave2@2x.jpg) no-repeat bottom;
-  background-size: contain;
-  min-height: 600px;
-  margin: 100px auto 50px
+  background: url(./img/wave2@2x.jpg) no-repeat center;
+  background-size: 100% 100%;
+  min-height: 500px;
+  margin: 50px auto 50px
 }
 
 footer {
@@ -161,6 +157,57 @@ footer {
   }
 }
 
+.swiper_face .swiper-slide ,.bottomSwiper .swiper-slide{
+  -webkit-transition: transform 1.0s;
+  -moz-transition: transform 1.0s;
+  -ms-transition: transform 1.0s;
+  -o-transition: transform 1.0s;
+  -webkit-transform: scale(0.8);
+  margin: 1px;
+  transform: scale(0.8);
+  opacity: 0.6;
+  -webkit-flex-shrink: 0;
+  -ms-flex: 0 0 auto;
+  flex-shrink: 0;
+  width: 100%;
+  height: auto;
+  position: relative;
+  text-align: center;
+}
+
+.swiper_face .swiper-slide-active,.swiper_face .swiper-slide-duplicate-active ,.bottomSwiper .swiper-slide-active,.bottomSwiper .swiper-slide-duplicate-active{
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  z-index: 1002;
+  opacity: 1 ;
+  //text-align: center;
+}
+.swiper_face .swiper-wrapper,.bottomSwiper .swiper-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  -o-transition-property: -o-transform;
+  -ms-transition-property: -ms-transform;
+  transition-property: transform;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  align-items: center;
+}
+.swiper_face .swiper-wrapper{
+  height: 100px !important;
+}
+
+
+
 @media (max-width: 1200px) {
 
 }
@@ -171,11 +218,6 @@ footer {
     background-size: contain;
     min-height: 500px;
     margin: 50px auto;
-  }
-
-  .line5 .line5_img {
-    width: 330px;
-    height: 585px;
   }
 }
 
@@ -205,11 +247,13 @@ footer {
   }
 
   .line5 {
-    min-height: 700px;
     margin: 50px 0;
     .line5_img {
-      width: 200px;
-      height: 357px;
+          width: 200px;
+          height: 357px;
+        }
+    .bottomSwiper {
+      min-height: 600px;
     }
   }
   .inline3{background-size: 55%;}
@@ -233,15 +277,11 @@ footer {
       }
       .wechat {
         padding-top: 0;
-        //text-align: left;
-        //margin-top: -200px;
         .wechat_img img {
           width: 147px;
           height: 60px;
         }
-        //h2{
-        //  padding-top: 0 !important;
-        //}
+
       }
     }
   }
@@ -255,8 +295,10 @@ footer {
     margin: 0 auto;
   }
   .line5 {
-    min-height: 585px;
     margin: 30px 0;
+    .bottomSwiper {
+      min-height: 600px;
+    }
   }
 
   .inline3 {
@@ -311,4 +353,77 @@ footer {
   }
 
 }
+@media (max-width: 568px) {
+  .line6bg {
+    background: url(./img/wave2@2x.jpg) no-repeat center;
+    background-size: cover;
+    min-height: 300px;
+    margin: 0 auto;
+  }
+  .line5 {
+    margin: 30px 0;
+    .bottomSwiper {
+      min-height: 500px;
+    }
+  }
 
+  .inline3 {
+    min-height: 550px;
+    margin-bottom: 50px;
+    .minlogo {
+      width: 60px;
+      height: 60px;
+      margin-right: 10px;
+    }
+  }
+  .inline2{
+    padding-top: 40px;
+  }
+  .bg_text {
+    margin-top: -40px;
+    min-height: 125px;
+  }
+
+  .inline1 {
+    height: 700px;
+    .logoimg {
+      float: none !important;
+      .f-r {
+        float: none !important;
+        margin: 20px 20px 0 0;
+      }
+    }
+    .swiperBox {
+      .phone {
+        text-align: right;
+        margin-top: 0;
+        img {
+          width: 200px;
+          height: 403px;
+          margin: 0;
+        }
+      }
+      .wechat {
+        padding-top: 0;
+        text-align: left;
+        margin-top: -65px;
+        .wechat_img img {
+          width: 147px;
+          height: 60px;
+        }
+        h2{
+          padding-top: 0 !important;
+        }
+      }
+
+    }
+  }
+
+  footer .flex img {
+    width: 65px;
+    height: 65px;
+    margin-top: -45px;
+    margin-left: 5px;
+  }
+
+}

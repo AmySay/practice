@@ -16,7 +16,8 @@
         -moz-box-shadow: 0 1px 1px #ccc;
         box-shadow: 0 1px 1px #ccc;
     }
-    p{
+
+    p {
         margin: 0;
         padding: 0;
     }
@@ -29,20 +30,24 @@
         text-align: center;
         border: 1px solid #cccccc;
     }
-    #thead td{
+
+    #thead td {
     }
-    #thead td div{
+
+    #thead td div {
         display: inline-block;
         margin-left: 5px;
     }
-    #thead td div .top{
+
+    #thead td div .top {
         width: 10px;
         height: 10px;
         transform: rotate(45deg);
         border-left: 1px solid #1bb934;
         border-top: 1px solid #1bb934;
     }
-    #thead td div .bottom{
+
+    #thead td div .bottom {
         width: 10px;
         height: 10px;
         transform: rotate(45deg);
@@ -59,22 +64,22 @@
 </body>
 <script src="./../../../jq/jq.js"></script>
 <script>
-  let subject = ["名字","语文", "数学", "英语"];
+  let subject = ["名字", "语文", "数学", "英语"];
   let data = [
     {
-      name:"小红",
+      name: "小红",
       chinese: 80,
       math: 83,
       english: 98
     },
     {
-      name:"小明",
+      name: "小明",
       chinese: 82,
       math: 85,
       english: 90
     },
     {
-      name:"小力",
+      name: "小力",
       chinese: 84,
       math: 88,
       english: 95
@@ -84,34 +89,84 @@
   let list = [];
 
   for (let i = 0; i < rowLen; i++) {
-    if(i==0){
+    if (i == 0) {
       list.push(`<td>${subject[i]}</td>`)
-    }else{
+    } else {
       list.push(`<td>${subject[i]}<div><p data-idx=${i} class="top"></p><p data-idx=${i} class="bottom"></p></div></td>`)
     }
   }
   $("#thead").html(list.join(''))
   fillHtml(data)
 
- function fillHtml(data){
-   let list2 = [];
-   for (let l = 0; l < columLen; l++) {
-     list2.push(`<tr>
+  function fillHtml(data) {
+    let list2 = [];
+    for (let l = 0; l < columLen; l++) {
+      list2.push(`<tr>
         <td>${data[l].name}</td>
         <td>${data[l].chinese}</td>
         <td>${data[l].math}</td>
         <td>${data[l].english}</td>
         </tr>`)
-   }
-   $("#tbody").html(list2.join(''))
- }
+    }
+    $("#tbody").html(list2.join(''))
+  }
 
-    $(".top").click(function (e) {
-      let idx=e.target.dataset.idx;
-      data=data.sort((a,b)=>{return b.idx})
-    });
+  function compare(rank, idx) {
+    if (rank === 'reverse') {
+      switch (idx) {
+        case "1": {
+          return function (a, b) {
+            return b.chinese - a.chinese
+          }
+        }
+        case '2': {
+          return function (a, b) {
+            return b.math - a.math
+          }
+        }
+        case '3': {
+          return function (a, b) {
+            return b.english - a.english
+          }
+        }
+      }
+    } else {
+      switch (idx) {
+        case "1": {
+          return function (a, b) {
+            return a.chinese - b.chinese
+          }
+        }
+        case '2': {
+          return function (a, b) {
+            return a.math - b.math
+          }
+        }
+        case '3': {
+          return function (a, b) {
+
+            return a.english - b.english
+          }
+        }
+      }
+    }
+
+
+  }
+
+
+  $(".top").click(function (e) {
+    console.log("top")
+    let idx = e.target.dataset.idx;
+    data = data.sort(compare("noreverse", idx))
+    fillHtml(data)
+  });
   $(".bottom").click(function (e) {
-    let idx=e.target.dataset.idx;
+    console.log("bottom")
+    let idx = e.target.dataset.idx;
+    data = data.sort(compare("reverse", idx))
+    fillHtml(data)
+    console.log(data)
   })
 
 </script>

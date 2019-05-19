@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .bg{
+        color: #00CC99;
+    }
+</style>
+<body>
+<!--将新元素输入框从input改为textarea-->
+<!--允许一次批量输入多个内容，格式可以为数字、中文、英文等，可以通过用回车，逗号（全角半角均可），顿号，空格（全角半角、Tab等均可）等符号作为不同内容的间隔-->
+<!--增加一个查询文本输入框，和一个查询按钮，当点击查询时，将查询词在各个元素内容中做模糊匹配，将匹配到的内容进行特殊标识，如文字颜色等。举例，内容中有abcd，查询词为ab或bc，则该内容需要标识-->
+<textarea id="num"> </textarea>
+<input id="search" />
+<button id="search_btn">查询</button>
+<div id="btns">
+    <button id="left_in">左侧入</button>
+    <button id="right_in">右侧入</button>
+    <button id="left_out">左侧出</button>
+    <button id="right_out">右侧出</button>
+</div>
+
+
+<ul id="num_wrap">
+
+</ul>
+<script>
+  let ipt = document.getElementById("num");
+  let search_ipt = document.getElementById("search");
+  let search_Val="";
+  let search_btn = document.getElementById("search_btn");
+  let btns = document.getElementById("btns");
+  let num_wrap = document.getElementById("num_wrap");
+  let Li = num_wrap.getElementsByTagName("li");
+  let value = '';
+  let LiData = [];
+  let searchIndex=[];
+
+
+
+  function fillHtml(data) {
+    let list = [];
+    for (let i = 0; i < data.length; i++) {
+      console.log(searchIndex)
+      if(searchIndex.length>0 && searchIndex.includes(i)){
+        list.push(`<li data-i=${i} class="bg">${data[i]}</li>`)
+      }else {
+        list.push(`<li data-i=${i}>${data[i]}</li>`)
+      }
+    }
+    num_wrap.innerHTML = list.join('')
+  }
+
+  ipt.onchange = function (e) {
+    value = e.target.value
+  };
+  search_ipt.onchange = function (e) {
+    search_Val = e.target.value
+  };
+  btns.onclick = function (e) {
+    let target = e.target;
+    switch (target.id) {
+      case "left_in" : {
+          value.length != 0 && LiData.unshift(value)
+          fillHtml(LiData)
+          ipt.value = ''
+          value = ''
+        break;
+      }
+      case "right_in" : {
+          value.length != 0 && LiData.push(value)
+          fillHtml(LiData)
+          ipt.value = ''
+          value = ''
+        break;
+
+      }
+      case "left_out" : {
+          let shiftLi = LiData.shift(value);
+          alert(shiftLi ? shiftLi : "不存在")
+          fillHtml(LiData)
+          ipt.value = ''
+          value = ''
+        break;
+      }
+      case "right_out" : {
+          let popLi =LiData.pop(value)
+          alert(popLi ? popLi : '不存在')
+          fillHtml(LiData)
+          ipt.value = ''
+          value = ''
+        break;
+      }
+    }
+  };
+  num_wrap.onclick = function (e) {
+    let target = e.target;
+    let index = target.dataset.i;
+    LiData.splice(index, 1)
+    fillHtml(LiData)
+  }
+  search_btn.onclick=function () {
+    LiData.map((item,idx)=>{
+      if(item.indexOf(search_Val)!=-1){
+        searchIndex.push(idx)
+      }
+    })
+    fillHtml(LiData)
+    searchIndex=[]
+  }
+</script>
+</body>
+</html>

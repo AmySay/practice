@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    #textarea_box {
+        display: none;
+    }
+</style>
+<body>
+<form name="form" onsubmit='return test()'>
+    <div id="radio_group">
+    <input type="radio" name="IsSchool" value="在校生" checked="checked"/>在校生
+    <input type="radio" name="IsSchool" value="非在校生"/>非在校生
+    </div>
+    <div id="select_box">
+        <select name="城市" id="city">
+        </select>
+        <select name="学校" id="school">
+        </select>
+    </div>
+    <div id="textarea_box">
+        <textarea name="textarea" cols="30" rows="10"></textarea>
+    </div>
+    <input type="submit" name="Submit" value="提交">
+</form>
+</body>
+<script>
+  window.onload = function () {
+    let city = ['选择', '许昌', '焦作', '洛阳'];
+    let school = ['选择', '许昌学院', '焦作大学', '洛阳师范'];
+    let city_ele = document.getElementById('city');
+    let school_ele = document.getElementById('school');
+    let radio_group=document.getElementById("radio_group");
+    let schoolVal = '';
+    let data = [
+      {'xuchang': ['许昌学院']},
+      {'jiaozuo': ['焦作大学']},
+      {'luoyang': ['洛阳师范']}
+    ]
+    fillHtml_city();
+
+    function fillHtml_city() {
+      let list = [];
+      for (let i = 0; i < city.length; i++) {
+        list.push(`<option value=${city[i]} data-idx=${i}>${city[i]}</option>`)
+      }
+      city_ele.innerHTML = list.join('')
+    }
+
+    function fillHtmlSchool(idx) {
+      let list=[];
+        list.push(`<option value=${city[idx]}>${school[idx]}</option>`)
+      school_ele.innerHTML = list.join('')
+    }
+
+    document.getElementById('city').onchange = function (e) {
+     console.log()
+      let idx = document.getElementById('city').selectedIndex;
+      fillHtmlSchool(idx)
+    }
+    document.getElementById('school').onchange = function (e) {
+      schoolVal = e.target.value;
+    }
+    radio_group.onclick=function (e) {
+      console.log(e)
+      let val=e.target.defaultValue;
+      if(val==='在校生'){
+        document.getElementById("select_box").style.display="block";
+        document.getElementById("textarea_box").style.display="none";
+      }else {
+        document.getElementById("select_box").style.display="none";
+        document.getElementById("textarea_box").style.display="block";
+      }
+
+    }
+  };
+
+</script>
+</html>

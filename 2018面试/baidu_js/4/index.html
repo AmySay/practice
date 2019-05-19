@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--如图，模拟一个队列，队列的每个元素是一个数字，初始队列为空-->
+<!--有一个input输入框，以及4个操作按钮-->
+
+<!--点击"左侧入"，将input中输入的数字从左侧插入队列中；-->
+<!--点击"右侧入"，将input中输入的数字从右侧插入队列中；-->
+<!--点击"左侧出"，读取并删除队列左侧第一个元素，并弹窗显示元素中数值；-->
+<!--点击"右侧出"，读取并删除队列又侧第一个元素，并弹窗显示元素中数值；-->
+<!--点击队列中任何一个元素，则该元素会被从队列中删除-->
+<input id="num" type="text"/>
+<div id="btns">
+    <button id="left_in">左侧入</button>
+    <button id="right_in">右侧入</button>
+    <button id="left_out">左侧出</button>
+    <button id="right_out">右侧出</button>
+</div>
+
+
+<ul id="num_wrap">
+
+</ul>
+<script>
+  let ipt = document.getElementById("num");
+  let btns = document.getElementById("btns");
+  let num_wrap = document.getElementById("num_wrap");
+  let Li = num_wrap.getElementsByTagName("li");
+  let value = '';
+  let LiData = [];
+
+  function isNumber(val) {
+    return !isNaN(val) && val !== null
+  }
+
+  function fillHtml(data) {
+    let list = [];
+    for (let i = 0; i < data.length; i++) {
+      list.push(`<li data-i=${i}>${data[i]}</li>`)
+    }
+    num_wrap.innerHTML = list.join('')
+  }
+
+  ipt.onchange = function (e) {
+    value = e.target.value
+  };
+  btns.onclick = function (e) {
+    let target = e.target;
+    switch (target.id) {
+      case "left_in" : {
+        if (isNumber(value)) {
+          value.length != 0 && LiData.unshift(value)
+          fillHtml(LiData)
+          ipt.value = ''
+          value = ''
+        } else {
+          alert("请输入数字")
+        }
+        break;
+      }
+      case "right_in" : {
+        if (isNumber(value)) {
+          value.length != 0 && LiData.push(value)
+          fillHtml(LiData)
+          ipt.value = ''
+          value = ''
+        } else {
+          alert("请输入数字")
+        }
+        break;
+
+      }
+      case "left_out" : {
+        let shiftLi = LiData.shift();
+        if (isNumber(value)) {
+          alert(shiftLi ? shiftLi : "不存在")
+          fillHtml(LiData)
+          ipt.value = ''
+          value = ''
+        } else {
+          alert("请输入数字")
+        }
+        break;
+      }
+      case "right_out" : {
+        let popLi = LiData.pop()
+        if (isNumber(value)) {
+          alert(popLi ? popLi : '不存在')
+          fillHtml(LiData)
+          ipt.value = ''
+          value = ''
+        } else {
+          alert("请输入数字")
+        }
+        break;
+      }
+    }
+  };
+  num_wrap.onclick = function (e) {
+    let target = e.target;
+    let index = target.dataset.i;
+    LiData.splice(index, 1)
+    fillHtml(LiData)
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+{
+    "code": "0",
+    "name": "root",
+    "children": [
+        {
+            "code": "1",
+            "name": "上海总公司 (宝石园)",
+            "children": [
+                {
+                    "code": "2",
+                    "name": "20号楼",
+                    "children": [
+                        {
+                            "code": "3",
+                            "name": "24楼",
+                            "children": []
+                        }
+                    ]
+                },
+                {
+                    "code": "4",
+                    "name": "25号楼",
+                    "children": [
+                        {
+                            "code": "5",
+                            "name": "1楼",
+                            "children": []
+                        },
+                        {
+                            "code": "6",
+                            "name": "2楼",
+                            "children": []
+                        },
+                        {
+                            "code": "7",
+                            "name": "3楼",
+                            "children": []
+                        },
+                        {
+                            "code": "8",
+                            "name": "4楼",
+                            "children": []
+                        },
+                        {
+                            "code": "9",
+                            "name": "5楼",
+                            "children": []
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "code": "Y7vaR91s7",
+            "name": "武汉分公司（中商广场）",
+            "children": [
+                {
+                    "code": "zx5BBxKWV",
+                    "name": "29层",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "code": "MUjVdnpVP",
+            "name": "合肥分公司（国际大厦A座）",
+            "children": [
+                {
+                    "code": "2IpY4byUH",
+                    "name": "18层",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "code": "_5Dy-SGNi",
+            "name": "济南分公司（名士杰座4号楼）",
+            "children": [
+                {
+                    "code": "McA-qBQsb",
+                    "name": "9层",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "code": "SLFXRMMLV",
+            "name": "长沙办事处（长远华樟名府嘉诚阁）",
+            "children": [
+                {
+                    "code": "tPa1gqL5t",
+                    "name": "8层",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "code": "QlWZRI8B6",
+            "name": "北京分公司（建国门南大街10号）",
+            "children": [
+                {
+                    "code": "XS_Uzb5aG",
+                    "name": "5层",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "code": "m-2QR2CEF",
+            "name": "昆明分公司（壹号广场9栋）",
+            "children": [
+                {
+                    "code": "ktgYcaiTs",
+                    "name": "30层",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "code": "Ny20L4qG7",
+            "name": "广州分公司（中州中心北塔）",
+            "children": [
+                {
+                    "code": "TPAFrdpMm",
+                    "name": "15层",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "code": "w3HLlThu2",
+            "name": "深圳分公司（新天世纪商务中心A座）",
+            "children": [
+                {
+                    "code": "QWoUdLTmk",
+                    "name": "23层",
+                    "children": []
+                }
+            ]
+        },
+        {
+            "code": "ELjANFZxV",
+            "name": "成都分公司",
+            "children": []
+        }
+    ]
+}

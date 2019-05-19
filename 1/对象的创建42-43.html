@@ -14,6 +14,7 @@
 <script>
     //创建对象实例的三种方法：
     //1,
+    // 构造函数 创建对象
     function dining(money, total, peoples) {
         this.money = money;
         this.total = total;
@@ -25,11 +26,12 @@
             return peoples - 1
         }
     }
-    let NewDining = new dining(1000, 20, 3);
-    console.log(NewDining["money"])
-    console.log(NewDining["total"])
-    console.log(NewDining["peoples"])
-    console.log(NewDining.add())
+    console.dir(dining)
+     console.log(dining.prototype) // ===构造函数里的属性,该属性指向一个对象，该对象称之为原型对象 {constructor: ƒ}
+
+    let NewDining = new dining(1000, 20, 3);  // ===》对象实例化
+    console.log(NewDining.__proto__)    // =====>实例对象的原型指向=== 构造函数.prototype的指向 === 构造函数.prototype里的constrctor的指向 ===指向构造函数
+    console.log(NewDining.add())    //  ====>构造函数里的属性和方法可在实例对象里访问到，因为构造函数里有构造器，用来将构造函数的方法继承与实例对象
 
 //2,
     let NewDining1= new Object();

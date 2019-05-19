@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>modal</title>
+</head>
+<style>
+
+    .view{
+        width: 100%;
+        position: relative;
+    }
+    #bg {
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, .2);
+        display: none
+    }
+
+    #modal {
+        min-width: 400px;
+        min-height: 100px;
+        max-width: 70%;
+        max-height: 50%;
+        border-radius: 10px;
+        background-color: #fffdef;
+        padding:15px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        z-index: 10;
+    }
+    #modal .title{
+        font-size: 14px;
+        color: #484848;
+        padding: 5px;
+    }
+.modalBody{
+    height: 200px;
+    background: #cc0000;
+}
+    .add{
+        height: 100px;
+        background: #00CC99;
+    }
+</style>
+<body>
+<div id="modal">
+    <div class="title"></div>
+    <div class="modalBody"></div>
+</div>
+<div class="view">
+    <div>我是内容</div>
+    <div>我是内容</div>
+    <div>我是内容</div>
+    <div>我是内容</div>
+    <button>点击</button>
+    <div id="bg"></div>
+</div>
+
+<script src="./../../../jq/jq.js"></script>
+<script>
+  $(function () {
+    $("button").click(function () {
+      modal.isShow(true)
+      modal.title("传个标题")
+      modal.modalBodyClass("add")
+    })
+
+    $("#bg").click(function () {
+      modal.isShow(false)
+    })
+    // 显示
+    let modal = {
+      title:function (title) {
+        return $("#modal .title").html(title ? title : "标题")
+      },
+      modalBodyClass:function(className){
+        return $(".modalBody").addClass(className)
+      },
+      isShow: function (boolean) {
+        if (boolean) {
+          return $("#bg").css("display", "block"), $("#modal").css("display", "block")
+        } else {
+          return $("#bg").css("display", "none"), $("#modal").css("display", "none")
+        }
+      }
+    }
+  })
+</script>
+</body>
+</html>

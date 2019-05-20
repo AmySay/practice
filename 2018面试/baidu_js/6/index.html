@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <style>
-    .bg{
+    .bg {
         color: #00CC99;
     }
 </style>
@@ -14,7 +14,7 @@
 <!--允许一次批量输入多个内容，格式可以为数字、中文、英文等，可以通过用回车，逗号（全角半角均可），顿号，空格（全角半角、Tab等均可）等符号作为不同内容的间隔-->
 <!--增加一个查询文本输入框，和一个查询按钮，当点击查询时，将查询词在各个元素内容中做模糊匹配，将匹配到的内容进行特殊标识，如文字颜色等。举例，内容中有abcd，查询词为ab或bc，则该内容需要标识-->
 <textarea id="num"> </textarea>
-<input id="search" />
+<input id="search"/>
 <button id="search_btn">查询</button>
 <div id="btns">
     <button id="left_in">左侧入</button>
@@ -30,24 +30,22 @@
 <script>
   let ipt = document.getElementById("num");
   let search_ipt = document.getElementById("search");
-  let search_Val="";
+  let search_Val = "";
   let search_btn = document.getElementById("search_btn");
   let btns = document.getElementById("btns");
   let num_wrap = document.getElementById("num_wrap");
   let Li = num_wrap.getElementsByTagName("li");
   let value = '';
   let LiData = [];
-  let searchIndex=[];
-
-
+  let searchIndex = [];
 
   function fillHtml(data) {
     let list = [];
     for (let i = 0; i < data.length; i++) {
       console.log(searchIndex)
-      if(searchIndex.length>0 && searchIndex.includes(i)){
+      if (searchIndex.length > 0 && searchIndex.includes(i)) {
         list.push(`<li data-i=${i} class="bg">${data[i]}</li>`)
-      }else {
+      } else {
         list.push(`<li data-i=${i}>${data[i]}</li>`)
       }
     }
@@ -64,34 +62,34 @@
     let target = e.target;
     switch (target.id) {
       case "left_in" : {
-          value.length != 0 && LiData.unshift(value)
-          fillHtml(LiData)
-          ipt.value = ''
-          value = ''
+        value.length != 0 && LiData.unshift(value)
+        fillHtml(LiData)
+        ipt.value = ''
+        value = ''
         break;
       }
       case "right_in" : {
-          value.length != 0 && LiData.push(value)
-          fillHtml(LiData)
-          ipt.value = ''
-          value = ''
+        value.length != 0 && LiData.push(value)
+        fillHtml(LiData)
+        ipt.value = ''
+        value = ''
         break;
 
       }
       case "left_out" : {
-          let shiftLi = LiData.shift(value);
-          alert(shiftLi ? shiftLi : "不存在")
-          fillHtml(LiData)
-          ipt.value = ''
-          value = ''
+        let shiftLi = LiData.shift(value);
+        alert(shiftLi ? shiftLi : "不存在")
+        fillHtml(LiData)
+        ipt.value = ''
+        value = ''
         break;
       }
       case "right_out" : {
-          let popLi =LiData.pop(value)
-          alert(popLi ? popLi : '不存在')
-          fillHtml(LiData)
-          ipt.value = ''
-          value = ''
+        let popLi = LiData.pop(value)
+        alert(popLi ? popLi : '不存在')
+        fillHtml(LiData)
+        ipt.value = ''
+        value = ''
         break;
       }
     }
@@ -102,14 +100,15 @@
     LiData.splice(index, 1)
     fillHtml(LiData)
   }
-  search_btn.onclick=function () {
-    LiData.map((item,idx)=>{
-      if(item.indexOf(search_Val)!=-1){
-        searchIndex.push(idx)
+  search_btn.onclick = function () {
+    console.log(LiData)
+   let searchRes= LiData.map((item, idx) => {
+      if (item.split(value).includes(search_Val)) {
+        item=item.replace(`${search_Val}`, `<span style="color: red"> ${search_Val} </span>`);
       }
-    })
-    fillHtml(LiData)
-    searchIndex=[]
+      return  item
+    });
+    fillHtml(searchRes)
   }
 </script>
 </body>

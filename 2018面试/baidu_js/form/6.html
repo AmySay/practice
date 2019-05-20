@@ -86,36 +86,36 @@
     }];
   let rowLen = subject.length;
   let columLen = data.length;
-  let list = [];
+  let list = '';
 
   for (let i = 0; i < rowLen; i++) {
     if (i == 0) {
-      list.push(`<td>${subject[i]}</td>`)
+      list+=`<td>${subject[i]}</td>`
     } else {
-      list.push(`<td>${subject[i]}<div><p data-idx=${i} class="top"></p><p data-idx=${i} class="bottom"></p></div></td>`)
+      list+=`<td>${subject[i]}<div><p data-idx=${i} class="top"></p><p data-idx=${i} class="bottom"></p></div></td>`
     }
   }
-  $("#thead").html(list.join(''))
+  $("#thead").html(list)
   fillHtml(data)
 
   function fillHtml(data) {
-    let list2 = [];
+    let list2 = '';
     for (let l = 0; l < columLen; l++) {
-      list2.push(`<tr>
+      list2+=(`<tr>
         <td>${data[l].name}</td>
         <td>${data[l].chinese}</td>
         <td>${data[l].math}</td>
         <td>${data[l].english}</td>
         </tr>`)
     }
-    $("#tbody").html(list2.join(''))
+    $("#tbody").html(list2)
   }
 
   function compare(rank, idx) {
     if (rank === 'reverse') {
       switch (idx) {
         case "1": {
-          return function (a, b) {
+          return function (a,b) {
             return b.chinese - a.chinese
           }
         }
@@ -150,13 +150,10 @@
         }
       }
     }
-
-
   }
 
 
   $(".top").click(function (e) {
-    console.log("top")
     let idx = e.target.dataset.idx;
     data = data.sort(compare("noreverse", idx))
     fillHtml(data)
@@ -166,7 +163,6 @@
     let idx = e.target.dataset.idx;
     data = data.sort(compare("reverse", idx))
     fillHtml(data)
-    console.log(data)
   })
 
 </script>

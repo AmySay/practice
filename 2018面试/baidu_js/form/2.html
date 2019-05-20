@@ -14,17 +14,23 @@
         color: orangered;
     }
 
+    #b_ruls, #c_ruls {
+        display: none;
+    }
+
 </style>
 <body>
 <form name=a onsubmit="return test()">
     <div id="b">
         <input name="b" type="text" placeholder="请输入手机号"/>
         <span id="b_res"></span>
+        <div id="b_ruls">必填，请输入手机号</div>
     </div>
     <br/>
     <div id="c">
         <input name="c" type="text" placeholder="请输入邮箱"/>
         <span id="c_res"></span>
+        <div id="c_ruls">必填，请输入邮箱</div>
     </div>
     <br/>
     <input type="submit" name="Submit" value="提交">
@@ -35,8 +41,41 @@
   let iptB = document.a.b;
   let iptC = document.a.c;
   let get = document.getElementById("get");
-  iptB.addEventListener("blur", rulers1)
-  iptC.addEventListener("blur", rulers2)
+  let rulers = {
+    ipt: '',
+    rulers1: function (element) {
+      let vaiB = [
+        document.a.b.value,
+        document.getElementById("b_res"),
+        document.a.b
+      ];
+      let vaiC = [
+        document.a.c.value,
+        document.getElementById("c_res"),
+        document.a.c
+      ];
+      let ele = element == "vaiB" ? vaiB : vaiC;
+      if (ele[0].length < 0 || element == "vaiB" ? !isMobile(ele[0]) : !isMail(vaiC)) {
+        ele[1].innerText = element == "vaiB" ? "请输入正确的手机号" : "请输入有效的邮箱";
+        ele[2].style.borderColor = "red";
+        return false
+      } else {
+        ele[2].style.borderColor = "green";
+        ele[1].innerText = '';
+        ipt.style.display = "none";
+        return true
+      }
+    },
+    rulers_b: function (idName) {
+      let ipt = document.getElementById(`${idName}`);
+      this.ipt = ipt;
+      ipt.style.display = "block"
+    }
+  }
+  iptB.addEventListener("blur", rulers.rulers1.bind(this, "vaiB"))
+  iptB.addEventListener("focus", rulers.rulers_b.bind(this, "b_ruls"))
+  iptC.addEventListener("blur", rulers.rulers1.bind(this, "vaiC"))
+  iptC.addEventListener("focus", rulers.rulers_b.bind(this, "c_ruls"))
 
   // 判断是否是邮箱
   function isMail(mail) {
@@ -48,43 +87,16 @@
     return /^((1[3,5,7,8][0-9])|(14[5,7])|(17[0,6,7,8])|(19[7]))\d{8}$/.test(mobile);
   }
 
-  function rulers1() {
-    let vaiB = document.a.b.value;
-    let b_res = document.getElementById("b_res");
-    console.log(vaiB)
-    if (vaiB.length < 0 || !isMobile(vaiB)) {
-      b_res.innerText = "请输入正确的手机号";
-      iptB.style.borderColor = "red";
-      return false
-    } else {
-      iptB.style.borderColor = "green";
-      return true
-    }
-  }
-
-  function rulers2() {
-    let vaiC = document.a.c.value;
-    let c_res = document.getElementById("c_res");
-    if (vaiC.length < 0 || !isMail(vaiC)) {
-      c_res.innerText = "请输入有效的邮箱";
-      iptC.style.borderColor = "red";
-      return false
-    } else {
-      iptC.style.borderColor = "green";
-      return true
-    }
-  }
-
   function test() {
-    rulers1() && rulers2() ? alert("提交成功") : alert("提交失败")
+    rulers.rulers_b("b_ruls") && rulers.rulers_b("b_ruls") ? alert("提交成功") : alert("提交失败")
   }
 
 
-let  name="wamgn";
+  let name = "wamgn";
 
   var Person1 = {
-    name : 'Chris',
-    greeting: function() {
+    name: 'Chris',
+    greeting: function () {
       alert('Hi! I\'m ' + name + '.');
     }
   }
